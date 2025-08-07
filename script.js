@@ -208,9 +208,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Event Listeners
-    activateBtn.addEventListener('click', function() {
-        showStep(paymentStep);
-    });
+    if (activateBtn) {
+        activateBtn.addEventListener('click', function() {
+            showStep(paymentStep);
+        });
+    }
+
+    if (payBtn) {
+        payBtn.addEventListener('click', initiatePayment);
+    }
     
     cancelBtn.addEventListener('click', function() {
         // Redirect back to app if return URL is provided
